@@ -7,6 +7,8 @@ body {
   background-color: rgb(253, 179, 56);
 }
 
+/*index.html */
+
 .intro {
   font-size: 45;
   color: white;
@@ -41,45 +43,11 @@ body {
   position: fixed;
   width: 100%;
   border-radius: 0px;
+  z-index: 10;
 }
-
-.about {
-  box-sizing: border-box;
-  position: absolute;
-  top: 100px;
-  display: inline-grid;
-  grid-template: 30% 50%/30% auto;
-  grid-column-gap: 50px;
-  margin-left: 20%;
-  background-color: rgba(255, 248, 220, 0.3);
-  justify-content: center;
-  align-content: center;
-}
-
-.container {
-  margin: 0 auto;
-}
-
-.description {
-  margin: 0 auto;
-}
-
 
 .intro p {
   font-family: 'Press Start 2P', cursive;
-}
-
-.description h1,p {
-  display: inline;
-  font-family: 'Lekton', sans-serif;
-  color:white;
-}
-
-.about img {
-  border-radius: 50%;
-  height: 200px;
-  width: 186px;
-  border: 5px solid #FFFF;
 }
 
 .nav ul {
@@ -132,4 +100,181 @@ body {
 @keyframes flyUp {
   from {top: 105%;}
   to {top: 0%}
+}
+
+
+/* about. html */
+
+.grid-container {
+  display: grid;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  height: auto;
+  width: 700px;
+  transform: translateX(-50%);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr 1fr;
+  grid-template-areas: " Image Description " "Education Education" "Skills Skills" "Experience Experience";
+  background-color: rgba(255, 248, 220, 0.3);
+  grid-gap: 10px 10px;
+  justify-content: center;
+  align-content: center;
+  font-family: 'Lekton', sans-serif;
+  color:white;
+}
+
+.Image { grid-area: Image; display: flex; align-items: center; justify-content: center; margin:0; padding:0;}
+.Image img {
+  border-radius: 50%;
+  height: 200px;
+  width: 186px;
+  border: 5px solid #FFFF;
+}
+
+
+.Description {
+  grid-area: Description;
+  display: inline;
+  text-align: left;
+
+}
+
+.Description p{
+  line-height: 15px;
+}
+
+
+.Education { grid-area: Education;
+margin-left: 10px;
+margin-right: 10px;
+background-color: rgba(255, 255, 170, 0.3);
+}
+
+.Education h1 {
+  margin: 5px;
+}
+
+/* timeline */
+
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  width: 650px;
+}
+
+.timeline::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  /* color of timeline */
+  background:  rgb(2, 81, 150);
+
+}
+
+.timeline ul{
+  margin:0;
+  padding: 0;
+}
+
+.timeline ul li {
+  list-style: none;
+  position: relative;
+  padding: 20px 40px;
+  width: 50%;
+  box-sizing: border-box;
+
+}
+
+.timeline ul li:nth-child(odd){
+  float: left;
+  text-align: right;
+  clear: both;
+}
+.timeline ul li:nth-child(even){
+  float: right;
+  text-align: left;
+  clear: both;
+}
+
+.content{
+  padding-bottom: 20px;
+}
+.timeline ul li:nth-child(odd):before{
+  content: '';
+  position: absolute;
+  top: 24px;
+  right: -6px;
+  width: 10px;
+  height: 10px;
+  background: rgba(253, 179, 56,1);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(253, 179, 56,0.2);
+}
+.timeline ul li:nth-child(even):before{
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  background: rgba(253, 179, 56,1);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(253, 179, 56,0.2);
+}
+
+.timeline ul li h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  color: rgb(2, 81, 150);
+}
+
+.timeline ul li p {
+  margin: 10px 0 0;
+  padding: 0;
+  line-height: 15px;
+  font-size: 15px;
+}
+
+.timeline ul li:nth-child(odd) .time{
+  position: absolute;
+  top: 12px;
+  right: -165px;
+  margin: 0;
+  padding: 8px 16px;
+  border-radius: 18px;
+  background: rgba(253, 179, 56,1);
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(253, 179, 56,0.3);
+}
+.timeline ul li:nth-child(even) .time{
+  position: absolute;
+  top: 12px;
+  left: -165px;
+  margin: 0;
+  padding: 8px 16px;
+  border-radius: 18px;
+  background: rgba(253, 179, 56,1);
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(253, 179, 56, 0.3);
+}
+
+
+
+
+.Skills { grid-area: Skills; }
+
+.Experience { grid-area: Experience; }
+
+.about {
+  box-sizing: border-box;
+  position: absolute;
+
+  grid-template: 30% 50%/30% auto;
+  grid-column-gap: 50px;
+  margin-left: 20%;
+
 }
