@@ -114,7 +114,7 @@ body {
   width: 700px;
   transform: translateX(-50%);
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 3fr 1fr 1fr;
+  grid-template-rows: 1fr 3fr 2fr 1fr;
   grid-template-areas: " Image Description " "Education Education" "Skills Skills" "Experience Experience";
   background-color: rgba(255, 248, 220, 0.3);
   grid-gap: 10px 10px;
@@ -265,8 +265,132 @@ background-color: rgba(255, 255, 170, 0.3);
 
 
 
-.Skills { grid-area: Skills; }
+.Skills {grid-area: Skills; background-color: rgba(255, 255, 170, 0.3); margin-left: 10px; margin-right: 10px; box-sizing: border-box; padding: 0;}
+/* Bar chart for representing skills; taking reference from this codePen https://codepen.io/vajkri/pen/NxzZwL */
 
+.bar-chart {
+  width: 75%;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.lines .line {
+  background: rgba(2, 81, 150, 0.6);
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  display: inline-block;
+}
+
+.l--0 {
+  position: relative;
+  left: 0%;
+}
+
+.l--25 {
+  position: relative;
+  left: 25%;
+}
+
+.l--50 {
+  position: relative;
+  left: 50%;
+}
+
+.l--75 {
+  position: relative;
+  left: 75%;
+}
+
+.l--100 {
+  position: relative;
+  left: calc(100% - 1%);
+}
+
+.line_label {
+  display: block;
+  width: 100px;
+  text-align: center;
+  font-size: 13px;
+  position: relative;
+  bottom: -100%;
+  left: -50px;
+
+  &.title {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.chart_bar {
+  background-color: rgb(253, 179, 56);
+  list-style: none;
+  margin: 2px;
+  font-family: 'Lekton', sans-serif;
+  box-shadow: 0 0 0 3px rgba(253, 179, 56, 0.3);
+  border-radius: 5px;
+}
+.Skills h1 {
+  margin: 5px;
+}
+
+/* language session */
+.language {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.logo {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.china, .uk, .japan {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.text {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  visibility: hidden;
+  font-weight: bold;
+  color: rgb(2, 81, 150);
+  transform: translate(-50%, -50%);
+}
+
+.china:hover .logo{
+  opacity: 0.3;
+}
+
+.japan:hover .logo{
+  opacity: 0.3;
+}
+.uk:hover .logo{
+  opacity: 0.3;
+}
+
+.china:hover .text {
+  visibility: visible;
+}
+
+.uk:hover .text {
+  visibility: visible;
+}
+.japan:hover .text {
+  visibility: visible;
+}
 .Experience { grid-area: Experience; }
 
 .about {
