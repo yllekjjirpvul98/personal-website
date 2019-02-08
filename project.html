@@ -1,0 +1,21 @@
+<html>
+
+  <head>
+    <title> hellokelly </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Slabo+27px" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lekton" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript.js"></script>
+  </head>
+
+  <body>
+    <div class="nav newPosition">
+      <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="project.html">Project</a></li><li><a href="#contact">Contact</a></li><li><a href="#blog">Blog</a></li></ul>
+    </div>
+    <div class="projects">
+      <div class = "sibling-fade">
+        <span onclick="displayAll();"><b>All</b></span><span onclick="displayWeb();"><b>Web development</b></span><span onClick="displayGame();"><b>Game Development</b></span>
+        </div>
+      <div id="itemlist"><script>displayAll();</script></div>
+    </div>
